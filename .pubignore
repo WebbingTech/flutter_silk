@@ -1,5 +1,5 @@
-src/lame
-src/silk
+src/lame/*
+src/silk/*
 src/lame/ACM
 src/lame/debian
 src/lame/dshow
