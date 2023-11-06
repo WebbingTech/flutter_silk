@@ -1,0 +1,7 @@
+[submodule "src/lame"]
+	path = src/lame
+	url = https://github.com/BestOwl/lame.git
+[submodule "silk"]
+	path = src/silk
+	url = https://github.com/collects/silk.git
+	branch = ARM_v1.0.9
