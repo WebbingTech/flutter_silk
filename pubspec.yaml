@@ -3,6 +3,9 @@ description: A flutter ffi plugin for converting audio from silk to pcm/mp3.
 version: 1.0.0
 homepage: https://github.com/WebbingTech/flutter_silk
 
+repository: https://github.com/WebbingTech/flutter_silk.git
+publish_to: https://pub.dev
+
 environment:
   sdk: '>=3.1.0 <4.0.0'
   flutter: '>=3.3.0'
@@ -64,7 +67,7 @@ flutter:
   # in this "flutter" section. Each entry in this list should have a
   # "family" key with the font family name, and a "fonts" key with a
   # list giving the asset and other descriptors for the font. For
-  example: example/lib/main.dart
+example: example/lib/main.dart
   # fonts:
   #   - family: Schyler
   #     fonts:
