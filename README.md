@@ -2,7 +2,7 @@
 
 A flutter ffi plugin for converting audio from silk to pcm/mp3. Support Macos, Ios, Linux, Windows and Android.
 
-## Use Case
+## Usage
 
 ```dart
 final silkData = File("input.silk").readAsBytesSync();
@@ -41,5 +41,7 @@ For example, see `silkToPcm` `pcmToMp3`  `silkToMp3`  in `lib/flutter_silk.dart`
 ## Reference
 
 [libSilkCodec](https://github.com/KonataDev/libSilkCodec)
+
 [silk](https://github.com/collects/silk)
+
 [flutter_lame](https://github.com/BestOwl/flutter_lame)
