@@ -26,7 +26,7 @@ final ffi.DynamicLibrary _dylib = () {
 /// The bindings to the native functions in [_dylib].
 final FlutterSilkBindings _bindings = FlutterSilkBindings(_dylib);
 
-Uint8List? silkToMp3(Uint8List silkData)  {
+Uint8List? silkToMp3(Uint8List silkData) {
   return _convert(silkData, _bindings.silkToMp3);
 }
 
