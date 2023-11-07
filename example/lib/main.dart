@@ -67,11 +67,11 @@ class _MyAppState extends State<MyApp> {
       var output = silkToMp3(silkData);
 
       final File f = File(path.join(outputDir!, outputName));
-      if (output != null ) {
+      if (output != null) {
         f.writeAsBytesSync(output!);
         print("Output file: ${f.path}");
       }
-      print("Done ${silkData.length}, output -> ${output == null}" );
+      print("Done ${silkData.length}, output -> ${output == null}");
       setState(() {
         done = true;
       });
@@ -79,9 +79,9 @@ class _MyAppState extends State<MyApp> {
       showDialog(
           context: context,
           builder: (context) => AlertDialog(
-            title: const Text("Error"),
-            content: Text(e.toString()),
-          ));
+                title: const Text("Error"),
+                content: Text(e.toString()),
+              ));
     } finally {
       setState(() {
         working = false;
@@ -106,7 +106,7 @@ class _MyAppState extends State<MyApp> {
               children: [
                 const Text(
                   'Call SILK/LAME API through FFI that is shipped as source in the package. '
-                      'The native code is built as part of the Flutter Runner build.',
+                  'The native code is built as part of the Flutter Runner build.',
                   style: textStyle,
                   textAlign: TextAlign.center,
                 ),
@@ -133,27 +133,32 @@ class _MyAppState extends State<MyApp> {
                 spacerSmall,
                 TextFormField(
                     onChanged: (v) => setState(() {
-                      outputName = v;
-                    }),
+                          outputName = v;
+                        }),
                     decoration:
-                    const InputDecoration(labelText: "Output MP3 filename"),
+                        const InputDecoration(labelText: "Output MP3 filename"),
                     initialValue: outputName),
                 spacerSmall,
                 ElevatedButton(
                     onPressed:
-                    inputPath != null && outputName.isNotEmpty && !working
-                        ? encodeMp3
-                        : null,
+                        inputPath != null && outputName.isNotEmpty && !working
+                            ? encodeMp3
+                            : null,
                     child: const Text(
                       "Encode to MP3",
                       style: textStyle,
                     )),
                 spacerSmall,
                 ElevatedButton(
-                  child: const Text('Play',
-                    style: textStyle,),
+                  child: const Text(
+                    'Play',
+                    style: textStyle,
+                  ),
                   onPressed: () async {
-                      done ? await player.play(DeviceFileSource(path.join(outputDir!, outputName))) : null;
+                    done
+                        ? await player.play(
+                            DeviceFileSource(path.join(outputDir!, outputName)))
+                        : null;
                   },
                 ),
                 spacerSmall,
