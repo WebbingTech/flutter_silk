@@ -1,5 +1,8 @@
 # Changelog
 
+## [1.0.3] - 2023-11-08
+- Add back dependency c lib's source file.
+
 ## [1.0.2] - 2023-11-07
 - Fix format.
 

@@ -1,6 +1,6 @@
 name: flutter_silk
 description: A flutter ffi plugin for converting audio from silk to pcm/mp3.
-version: 1.0.2
+version: 1.0.3
 homepage: https://github.com/WebbingTech/flutter_silk
 
 repository: https://github.com/WebbingTech/flutter_silk/tree/main
