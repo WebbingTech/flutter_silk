@@ -35,8 +35,6 @@ example/build
 #./example/macos/Pods/
 #./example/ios/Pods/
 
-src/lame/*
-src/silk/*
 macos/Classes/
 ios/Classes/
 macos/Classes/
