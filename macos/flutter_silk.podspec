@@ -4,7 +4,7 @@
 #
 Pod::Spec.new do |s|
   s.name             = 'flutter_silk'
-  s.version          = '0.0.1'
+  s.version          = '1.0.4'
   s.summary          = 'A flutter ffi plugin for converting audio from silk to pcm/mp3.'
   s.description      = <<-DESC
 A flutter ffi plugin for converting audio from silk to pcm/mp3.
@@ -34,7 +34,7 @@ A flutter ffi plugin for converting audio from silk to pcm/mp3.
 
   s.platform = :osx, '10.13'
   s.pod_target_xcconfig = {
-    'OTHER_CFLAGS' => '-DDEBUG=0',
+    'OTHER_CFLAGS' => '-DNDEBUG=NO',
     'OTHER_LDFLAGS' => '-Wl,-v',
     'DEFINES_MODULE' => 'YES',
     'HEADER_SEARCH_PATHS' => [
@@ -47,8 +47,7 @@ A flutter ffi plugin for converting audio from silk to pcm/mp3.
       '"${PODS_TARGET_SRCROOT}/Classes/lame/mpglib"'
     ],
     'GCC_PREPROCESSOR_DEFINITIONS' => [
-      '$(inherited) DEBUG=0',
-      '$(inherited) NDEBUG=1',
+      '$(inherited) NDEBUG=NO',
       'HAVE_STDINT_H',
       'HAVE_MPGLIB',
       'DECODE_ON_THE_FLY',

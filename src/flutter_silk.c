@@ -222,6 +222,8 @@ pcmToMp3(const unsigned char* pcmData, long pcmSize, int sampleRate, unsigned ch
 {
     assert(pcmData != NULL && pcmSize > 0 && mp3Data != NULL && mp3Size != NULL);
 
+
+
     const int MP3_SIZE = 4096;
     const int num_of_channels = 1;
 
@@ -237,21 +239,21 @@ pcmToMp3(const unsigned char* pcmData, long pcmSize, int sampleRate, unsigned ch
     lame_set_mode(gfp, MONO);
     // RG is enabled by default
     lame_set_findReplayGain(gfp, 1);
-    lame_set_quality(gfp, 2);
+    // lame_set_quality(gfp, 4);
     //Setting Channels
     lame_set_num_channels(gfp, num_of_channels);
 
-    unsigned long fsize = (unsigned long) (pcmSize / (2 * num_of_channels));
+    unsigned long fsize = (unsigned long) (pcmSize / ( 2 * num_of_channels));
     lame_set_num_samples(gfp, fsize);
 
     int samples_to_read = lame_get_framesize(gfp);
     int samples_of_channel = 576;
-    samples_to_read = samples_of_channel * num_of_channels;    //
+    samples_to_read = samples_of_channel * num_of_channels ;    //
     // int framesize = samples_to_read;
     // std::assert(framesize <= 1152);
     // int bytes_per_sample = sizeof(short int);
 
-    lame_set_out_samplerate(gfp, 24000);
+    lame_set_out_samplerate(gfp, sampleRate);
 
     if(lame_init_params(gfp) == -1)
     {
@@ -261,7 +263,7 @@ pcmToMp3(const unsigned char* pcmData, long pcmSize, int sampleRate, unsigned ch
     }
 
     unsigned char mp3_buffer[MP3_SIZE];
-    int count = (int)((pcmSize + samples_to_read - 1) / samples_to_read);
+    int count = (int)((pcmSize + samples_to_read * 2 - 1) / (samples_to_read * 2));
 
     *mp3Data = (unsigned char*)malloc(count * MP3_SIZE);
     if (*mp3Data == NULL)
@@ -275,8 +277,8 @@ pcmToMp3(const unsigned char* pcmData, long pcmSize, int sampleRate, unsigned ch
 
     for (int idx = 0; idx < count; ++idx)
     {
-        int offset = idx * samples_to_read;
-        int samples_to_encode = (offset + samples_to_read > pcmSize) ? (pcmSize - offset) : samples_to_read;
+        int offset = idx * samples_to_read * 2;
+        int samples_to_encode = (offset + samples_to_read * 2 > pcmSize) ? (pcmSize - offset) : samples_to_read * 2;
 
         int write = lame_encode_buffer(gfp, (short int*)(pcmData + offset), NULL, samples_to_encode, mp3_buffer, MP3_SIZE);
         memcpy(mp3_ptr, mp3_buffer, write);

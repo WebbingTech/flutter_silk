@@ -1,7 +1,11 @@
 # Changelog
 
+## [1.0.3] - 2023-11-10
+- Fix duration bug.
+- Remove some debug log from lame.
+
 ## [1.0.3] - 2023-11-08
-- Add back dependency c lib's source file.
+- Add back dependency c lib's source file. Fix duration bug.
 
 ## [1.0.2] - 2023-11-07
 - Fix format.
