@@ -280,7 +280,7 @@ pcmToMp3(const unsigned char* pcmData, long pcmSize, int sampleRate, unsigned ch
         int offset = idx * samples_to_read * 2;
         int samples_to_encode = (offset + samples_to_read * 2 > pcmSize) ? (pcmSize - offset) : samples_to_read * 2;
 
-        int write = lame_encode_buffer(gfp, (short int*)(pcmData + offset), NULL, samples_to_encode, mp3_buffer, MP3_SIZE);
+        int write = lame_encode_buffer(gfp, (short int*)(pcmData + offset), NULL, samples_to_encode /2 , mp3_buffer, MP3_SIZE);
         memcpy(mp3_ptr, mp3_buffer, write);
         mp3_ptr += write;
         *mp3Size += write;

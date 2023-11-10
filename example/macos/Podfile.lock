@@ -1,7 +1,7 @@
 PODS:
   - audioplayers_darwin (0.0.1):
     - FlutterMacOS
-  - flutter_silk (0.0.1):
+  - flutter_silk (1.0.4):
     - FlutterMacOS
   - FlutterMacOS (1.0.0)
   - path_provider_foundation (0.0.1):
@@ -26,7 +26,7 @@ EXTERNAL SOURCES:
 
 SPEC CHECKSUMS:
   audioplayers_darwin: dcad41de4fbd0099cb3749f7ab3b0cb8f70b810c
-  flutter_silk: 5661813c7da9ab76047d2cbe1a1bca71b1c620ec
+  flutter_silk: 8a9a3a2a183c374282c7d97ab9176cd04af16f63
   FlutterMacOS: 8f6f14fa908a6fb3fba0cd85dbd81ec4b251fb24
   path_provider_foundation: 29f094ae23ebbca9d3d0cec13889cd9060c0e943
 

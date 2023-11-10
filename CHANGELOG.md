@@ -1,6 +1,6 @@
 # Changelog
 
-## [1.0.3] - 2023-11-10
+## [1.0.5] - 2023-11-10
 - Fix duration bug.
 - Remove some debug log from lame.
 
