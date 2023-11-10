@@ -4,7 +4,7 @@
 #
 Pod::Spec.new do |s|
   s.name             = 'flutter_silk'
-  s.version          = '1.0.4'
+  s.version          = '1.0.5'
   s.summary          = 'A flutter ffi plugin for converting audio from silk to pcm/mp3.'
   s.description      = <<-DESC
 A flutter ffi plugin for converting audio from silk to pcm/mp3.
